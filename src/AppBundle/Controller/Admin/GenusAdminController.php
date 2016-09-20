@@ -29,6 +29,7 @@ class GenusAdminController extends Controller
 
     /**
      * @param Request $request
+     * @Route("/genus/new", name="admin_genus_new")
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function newAction(Request $request)
