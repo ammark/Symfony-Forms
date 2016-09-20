@@ -26,8 +26,10 @@ class GenusAdminController extends Controller
         ));
     }
 
+
     /**
-     * @Route("/genus/new", name="admin_genus_new")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function newAction(Request $request)
     {
@@ -35,6 +37,7 @@ class GenusAdminController extends Controller
 
         // Only handles data on POST
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
             dump($form->getData());die;
         }
