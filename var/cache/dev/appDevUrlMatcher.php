@@ -100,17 +100,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/admin/genus')) {
-            // admin_genus_list
-            if ($pathinfo === '/admin/genus') {
-                return array (  '_controller' => 'AppBundle\\Controller\\Admin\\GenusAdminController::indexAction',  '_route' => 'admin_genus_list',);
-            }
-
-            // admin_genus_new
-            if ($pathinfo === '/admin/genus/new') {
-                return array (  '_controller' => 'AppBundle\\Controller\\Admin\\GenusAdminController::newAction',  '_route' => 'admin_genus_new',);
-            }
-
+        // admin_genus_list
+        if ($pathinfo === '/admin/genus') {
+            return array (  '_controller' => 'AppBundle\\Controller\\Admin\\GenusAdminController::indexAction',  '_route' => 'admin_genus_list',);
         }
 
         if (0 === strpos($pathinfo, '/genus')) {
