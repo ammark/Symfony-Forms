@@ -4,6 +4,7 @@ namespace AppBundle\Form;
 
 use AppBundle\Entity\SubFamily;
 use AppBundle\Repository\SubFamilyRepository;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -31,7 +32,13 @@ class GenusFormType extends AbstractType
                     'No' => false,
                 ]
             ])
-            ->add('firstDiscoveredAt')
+            ->add('firstDiscoveredAt', DateType::class, [
+                'widget' => 'single_text',
+                'attr' => [
+                    'class' => 'js-datepicker'
+                ],
+                'html5' => false,
+            ])
         ;
     }
 
